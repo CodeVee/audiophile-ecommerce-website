@@ -4,15 +4,60 @@ module.exports = {
   theme: {
     colors: {
       transparent: 'transparent',
-      current: 'currentColor'
+      current: 'currentColor',
+      'white': '#FFFFFF',
+      'brown': {
+        DEFAULT: '#D87D4A',
+        light: '#FBAF85'
+      },
+      'grey': {
+        DEFAULT: '#F1F1F1',
+        light: '#FAFAFA'
+      },
+      'black': {
+        DEFAULT: '#000000',
+        mid: '#101010'
+      }
     },
-    fontSize: {},
-    lineHeight: {},
+    fontSize: {
+      xs: '1.3rem',
+      xsm: '1.4rem',
+      sm: '1.5rem',
+      md: '1.8rem',
+      lg: '2.4rem',
+      lgm: '2.8rem',
+      xl: '3.2rem',
+      '2xl': '4rem',
+      '3xl': '5.6rem',
+    },
+    lineHeight: {
+      xs: '1.9rem',
+      xsm: '2.4rem',
+      sm: '2.5rem',
+      md: '3.3rem',
+      lg: '3.6rem',
+      xl: '3.8rem',
+      '2xl': '4.4rem',
+      '3xl': '5.8rem'
+    },
     extend: {
-      letterSpacing: {},
-      borderRadius: {},
+      letterSpacing: {
+        xp: '.1rem',
+        xpm: '.115rem',
+        sp: '.13rem',
+        mp: '.15rem',
+        lp: '.17rem',
+        px: '.2rem',
+        pp: '1rem'
+      },
+      borderRadius: {
+        0.8: '0.8rem'
+      },
       boxShadow: {},
-      spacing: {}
+      spacing: {
+        4.8: '4.8rem',
+        ct: '111rem',
+      }
     },
   },
   plugins: [require('@tailwindcss/forms')],
