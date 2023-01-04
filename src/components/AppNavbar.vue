@@ -1,5 +1,5 @@
 <template>
-    <nav class="bg-black px-2.4 md:px-0">
+    <nav class="px-2.4 md:px-0" :class="bgCol">
         <div class="md:w-cm lg:w-ct mx-auto flex items-center h-36 lg:h-[9.7rem]">
             <button class="lg:hidden">
                 <img src="@/assets/shared/tablet/icon-hamburger.svg" alt="hamburger">
@@ -15,3 +15,22 @@
         </div>
     </nav>
 </template>
+
+<script setup lang="ts">
+import { useRoute } from 'vue-router'
+import { ref, watch } from 'vue'
+
+const route = useRoute()
+    const bgCol = ref('bg-black-light')
+    
+    watch(
+      () => route.name,
+       routeName => {
+        if (routeName === 'home') {
+            bgCol.value = 'bg-black-light'
+        } else {
+            bgCol.value = 'bg-black'
+        }
+      }
+    )
+</script>
