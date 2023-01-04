@@ -12,7 +12,8 @@ module.exports = {
       },
       'grey': {
         DEFAULT: '#F1F1F1',
-        light: '#FAFAFA'
+        light: '#FAFAFA',
+        mid: '#4C4C4C'
       },
       'black': {
         DEFAULT: '#000000',
@@ -57,7 +58,10 @@ module.exports = {
       boxShadow: {},
       spacing: {
         2.4: '2.4rem',
+        3.2: '3.2rem',
         4.8: '4.8rem',
+        6.4: '6.4rem',
+        9.5: '9.5rem',
         ct: '111rem',
         cm: '68.9rem'
       }

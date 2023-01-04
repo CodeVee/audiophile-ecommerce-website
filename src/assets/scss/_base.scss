@@ -16,7 +16,10 @@
     @apply btn bg-brown text-white hover:bg-brown-light;
   }
   .btn-secondary {
-    @apply btn bg-white text-black border border-black hover:bg-black hover:text-white;
+    @apply btn bg-transparent text-black border border-black hover:bg-black hover:text-white;
+  }
+  .btn-tetiary {
+    @apply btn bg-black text-white hover:bg-grey-mid;
   }
 }
 
