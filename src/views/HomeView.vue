@@ -1,9 +1,10 @@
 <script setup lang="ts">
+import CategoryNav from '@/components/CategoryNav.vue';
 </script>
 
 <template>
   <main>
-    <header class="bg-black-ligh mb-16 md:mb-[9.6rem] lg:mb-48 bg-[url('@/assets/home/mobile/image-header.jpg')] md:bg-[url('@/assets/home/tablet/image-header.jpg')] lg:bg-[url('@/assets/home/desktop/image-hero.jpg')] bg-cover lg:bg-auto bg-bottom">
+    <header class="bg-black-ligh mb-[9.2rem] md:mb-[14.8rem] lg:mb-80 bg-[url('@/assets/home/mobile/image-header.jpg')] md:bg-[url('@/assets/home/tablet/image-header.jpg')] lg:bg-[url('@/assets/home/desktop/image-hero.jpg')] bg-cover lg:bg-auto bg-bottom">
       <div class="lg:w-ct mx-auto h-[51rem] md:h-[63.9rem] lg:h-[63.3rem]">
         <div class="bg-white h-[1px] opacity-20"></div>
         <div class="flex flex-col gap-2.4 mb-11 md:mb-16 mx-auto lg:mx-0 w-[32.8rem] md:w-[39.8rem] pt-[10.8rem] md:pt-[12.8rem] text-center lg:text-left">
@@ -14,5 +15,8 @@
         <button class="btn btn-default btn-primary mx-auto lg:mx-0">see product</button>
       </div>
     </header>
+    <div class="px-2.4 md:px-0 md:w-cm lg:w-ct mx-auto">
+      <CategoryNav class="mb-[16.8rem]"/>
+    </div>
   </main>
 </template>
