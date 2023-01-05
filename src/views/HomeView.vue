@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AppBanner from '@/components/AppBanner.vue';
+import AppFooter from '@/components/AppFooter.vue';
 import CategoryNav from '@/components/CategoryNav.vue';
 </script>
 
@@ -46,5 +47,6 @@ import CategoryNav from '@/components/CategoryNav.vue';
       </div>
       <AppBanner class="my-48 md:my-[9.6rem] lg:my-80" />
     </div>
+    <AppFooter />
   </main>
 </template>

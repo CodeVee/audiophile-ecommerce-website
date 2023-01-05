@@ -57,6 +57,7 @@ module.exports = {
       },
       boxShadow: {},
       spacing: {
+        1.6: '1.6rem',
         2.4: '2.4rem',
         3.2: '3.2rem',
         4.8: '4.8rem',
