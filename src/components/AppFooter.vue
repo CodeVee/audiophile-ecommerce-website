@@ -2,20 +2,20 @@
     <div class="bg-black">
         <div class="px-2.4 md:px-0 md:w-cm lg:w-ct h-[65.4rem] md:h-[40rem] lg:h-[36.5rem] mx-auto">
             <div class="bg-brown h-[.4rem] w-[10.1rem] mx-auto md:mx-0"></div>
-            <div class="mt-4.8 md:mt-[5.6rem] lg:mt-[7.1rem] flex flex-col items-center md:items-start gap-4.8 md:gap-3.2 lg:gap-0 lg:flex-row lg:justify-between lg:items-center">
-                <img class=" w-[14.3rem]" src="@/assets/shared/desktop/logo.svg" alt="logo">
-                <div class="flex flex-col items-center md:items-start md:flex-row gap-1.6 md:gap-[3.4rem]">
+            <div class="mt-4.8 md:mt-5.6 lg:mt-[7.1rem] flex flex-col items-center md:items-start gap-4.8 md:gap-3.2 lg:gap-0 lg:flex-row lg:justify-between lg:items-center">
+                <img class="w-[14.3rem]" src="@/assets/shared/desktop/logo.svg" alt="logo">
+                <div class="flex flex-col items-center md:items-start md:flex-row gap-1.6 md:gap-3.4">
                     <router-link to="/" class="text-white hover:text-brown uppercase text-xs font-bold leading-sm tracking-px">Home</router-link>
                     <router-link to="headphones" class="text-white hover:text-brown uppercase text-xs font-bold leading-sm tracking-px">Headphones</router-link>
                     <router-link to="speakers" class="text-white hover:text-brown uppercase text-xs font-bold leading-sm tracking-px">Speakers</router-link>
                     <router-link to="earphones" class="text-white hover:text-brown uppercase text-xs font-bold leading-sm tracking-px">Earphones</router-link>
                 </div> 
             </div>
-            <div class="mt-4.8 md:mt-3.2 lg:mt-[3.6rem] flex justify-between text-center md:text-left">
+            <div class="mt-4.8 md:mt-3.2 lg:mt-3.6 flex justify-between text-center md:text-left">
                 <p class="font-medium text-white/50 text-sm leading-sm lg:w-[54rem]">
                     Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.
                 </p>
-                <div class="hidden lg:flex items-center gap-[1.6rem] self-end">
+                <div class="hidden lg:flex items-center gap-1.6 self-end">
                     <a href="https://facebook.com" target="_blank">
                         <svg class="fill-white hover:fill-brown" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z" fill-rule="nonzero"/>
@@ -33,9 +33,9 @@
                     </a>
                 </div>
             </div>
-            <div class="flex flex-col gap-4.8 md:gap-0 items-center md:items-start md:justify-between mt-4.8 md:mt-32 lg:mt-[5.6rem]">
+            <div class="flex flex-col gap-4.8 md:gap-0 items-center md:items-start md:justify-between mt-4.8 md:mt-32 lg:mt-5.6">
                 <h6 class="font-medium text-white/50 text-sm leading-sm">Copyright 2021. All Rights Reserved</h6>
-                <div class="lg:hidden flex items-center gap-[1.6rem] md:self-end">
+                <div class="lg:hidden flex items-center gap-1.6 md:self-end">
                     <a href="https://facebook.com" target="_blank">
                         <svg class="fill-white hover:fill-brown" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z" fill-rule="nonzero"/>

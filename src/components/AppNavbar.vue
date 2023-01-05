@@ -5,7 +5,7 @@
                 <img src="@/assets/shared/tablet/icon-hamburger.svg" alt="hamburger">
             </button>
             <img class="ml-[7.6rem] mr-[6.9rem] md:ml-[4.2rem] md:mr-auto lg:ml-0 lg:mr-0" src="@/assets/shared/desktop/logo.svg" alt="logo">
-            <div class="hidden lg:flex justify-between w-[42.9rem] ml-[19.7rem] mr-auto">
+            <div class="hidden lg:flex gap-3.4 ml-[19.7rem] mr-auto">
                 <router-link to="/" class="text-white hover:text-brown uppercase text-xs font-bold leading-sm tracking-px">Home</router-link>
                 <router-link to="headphones" class="text-white hover:text-brown uppercase text-xs font-bold leading-sm tracking-px">Headphones</router-link>
                 <router-link to="speakers" class="text-white hover:text-brown uppercase text-xs font-bold leading-sm tracking-px">Speakers</router-link>

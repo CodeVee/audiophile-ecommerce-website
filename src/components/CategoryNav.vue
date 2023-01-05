@@ -6,7 +6,7 @@
             </div>
             <h3 class="text-black font-bold text-sm lg:text-md leading-xs lg:leading-sm tracking-xp lg:tracking-sp uppercase">headphones</h3>
             <router-link to="/" class="flex">
-                <span class="uppercase text-black font-bold text-xs leading-xs tracking-xp opacity-50 mr-5">shop</span>
+                <span class="uppercase text-black/50 font-bold text-xs leading-xs tracking-xp mr-5">shop</span>
                 <img class="self-center" src="@/assets/shared/desktop/icon-arrow-right.svg" alt="right arrow">
             </router-link>
         </div>
@@ -16,7 +16,7 @@
             </div>
             <h3 class="text-black font-bold text-sm lg:text-md leading-xs lg:leading-sm tracking-xp lg:tracking-sp uppercase">speakers</h3>
             <router-link to="/" class="flex">
-                <span class="uppercase text-black font-bold text-xs leading-xs tracking-xp opacity-50 mr-5">shop</span>
+                <span class="uppercase text-black/50 font-bold text-xs leading-xs tracking-xp mr-5">shop</span>
                 <img class="self-center" src="@/assets/shared/desktop/icon-arrow-right.svg" alt="right arrow">
             </router-link>
         </div>
@@ -26,7 +26,7 @@
             </div>
             <h3 class="text-black font-bold text-sm lg:text-md leading-xs lg:leading-sm tracking-xp lg:tracking-sp uppercase">earphones</h3>
             <router-link to="/" class="flex">
-                <span class="uppercase text-black font-bold text-xs leading-xs tracking-xp opacity-50 mr-5">shop</span>
+                <span class="uppercase text-black/50 font-bold text-xs leading-xs tracking-xp mr-5">shop</span>
                 <img class="self-center" src="@/assets/shared/desktop/icon-arrow-right.svg" alt="right arrow">
             </router-link>
         </div>

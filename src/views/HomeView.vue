@@ -22,7 +22,7 @@ import CategoryNav from '@/components/CategoryNav.vue';
       <div class="grid gap-y-4.8">
         <div class="bg-brown h-[60rem] md:h-[72rem] lg:h-[56rem] rounded-0.8 lg:pr-9.5 pb-[5.5rem] md:pb-6.4 lg:pb-0 flex flex-col lg:flex-row justify-end relative overflow-clip">
           <div class="w-[55.8rem] md:w-[94.4rem] h-full top-0 left-0 absolute">
-            <img class="absolute -left-[11.6rem] md:-left-[12.7rem] lg:-left-[14.9rem] bottom-[16.3rem] md:bottom-6.4 lg:bottom-0 lg:-top-[3.6rem]" src="@/assets/home/desktop/pattern-circles.svg" alt="circles">
+            <img class="absolute -left-[11.6rem] md:-left-[12.7rem] lg:-left-[14.9rem] bottom-[16.3rem] md:bottom-6.4 lg:bottom-0 lg:-top-3.6" src="@/assets/home/desktop/pattern-circles.svg" alt="circles">
           </div>
           <img src="@/assets/home/mobile/image-speaker-zx9.png" alt="zx9" class="md:hidden w-[17.2rem] absolute left-[7.75rem] top-[5.5rem]">
           <img src="@/assets/home/tablet/image-speaker-zx9.png" alt="zx9" class="hidden md:inline-block lg:hidden w-[19.7rem] absolute left-[24.7rem] top-[5.2rem]">
