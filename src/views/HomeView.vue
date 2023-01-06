@@ -7,7 +7,7 @@ import CategoryNav from '@/components/CategoryNav.vue';
   <main>
     <header class="bg-black-ligh mb-[9.2rem] md:mb-[14.8rem] lg:mb-80 bg-[url('@/assets/home/mobile/image-header.jpg')] md:bg-[url('@/assets/home/tablet/image-header.jpg')] lg:bg-[url('@/assets/home/desktop/image-hero.jpg')] bg-cover lg:bg-auto bg-bottom">
       <div class="lg:w-ct mx-auto h-[51rem] md:h-[63.9rem] lg:h-[63.3rem]">
-        <div class="bg-white h-[1px] opacity-20"></div>
+        <div class="bg-white/20 h-[1px]"></div>
         <div class="flex flex-col gap-2.4 mb-11 md:mb-16 mx-auto lg:mx-0 w-[32.8rem] md:w-[39.8rem] pt-[10.8rem] md:pt-[12.8rem] text-center lg:text-left">
           <span class="font-normal text-xsm leading-xs tracking-pp uppercase text-white opacity-50">new product</span>
           <h1 class="font-bold uppercase text-[3.6rem] md:text-3xl leading-[4rem] md:leading-3xl tracking-sp md:tracking-px text-white">XX99 Mark II Headphones</h1>
