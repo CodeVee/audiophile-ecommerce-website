@@ -1,6 +1,13 @@
 <template>
     <div>
-        {{ categoryProducts.length }}
+        <header class="bg-black">
+            <div class="md:w-cm lg:w-ct mx-auto">
+                <div class="bg-white/20 h-[1px]"></div>
+                <div class="h-[10.2rem] md:h-[24.6rem] lg:h-[23.9rem] flex justify-center items-center">
+                    <h2 class="uppercase text-white font-bold text-lgm md:text-2xl leading-xl md:leading-2xl tracking-px md:tracking-mp">{{ category }}</h2>
+                </div>
+            </div>    
+        </header>
     </div>
 </template>
 
