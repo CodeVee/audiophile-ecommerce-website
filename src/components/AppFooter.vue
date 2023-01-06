@@ -5,10 +5,10 @@
             <div class="mt-4.8 md:mt-5.6 lg:mt-[7.1rem] flex flex-col items-center md:items-start gap-4.8 md:gap-3.2 lg:gap-0 lg:flex-row lg:justify-between lg:items-center">
                 <img class="w-[14.3rem]" src="@/assets/shared/desktop/logo.svg" alt="logo">
                 <div class="flex flex-col items-center md:items-start md:flex-row gap-1.6 md:gap-3.4">
-                    <router-link to="/" class="text-white hover:text-brown uppercase text-xs font-bold leading-sm tracking-px">Home</router-link>
-                    <router-link to="headphones" class="text-white hover:text-brown uppercase text-xs font-bold leading-sm tracking-px">Headphones</router-link>
-                    <router-link to="speakers" class="text-white hover:text-brown uppercase text-xs font-bold leading-sm tracking-px">Speakers</router-link>
-                    <router-link to="earphones" class="text-white hover:text-brown uppercase text-xs font-bold leading-sm tracking-px">Earphones</router-link>
+                    <router-link :to="{name: 'home'}" class="text-white hover:text-brown uppercase text-xs font-bold leading-sm tracking-px">Home</router-link>
+                    <router-link :to="{name: 'category', params: {category: 'headphones'}}" class="text-white hover:text-brown uppercase text-xs font-bold leading-sm tracking-px">Headphones</router-link>
+                    <router-link :to="{name: 'category', params: {category: 'speakers'}}" class="text-white hover:text-brown uppercase text-xs font-bold leading-sm tracking-px">Speakers</router-link>
+                    <router-link :to="{name: 'category', params: {category: 'earphones'}}" class="text-white hover:text-brown uppercase text-xs font-bold leading-sm tracking-px">Earphones</router-link>
                 </div> 
             </div>
             <div class="mt-4.8 md:mt-3.2 lg:mt-3.6 flex justify-between text-center md:text-left">
