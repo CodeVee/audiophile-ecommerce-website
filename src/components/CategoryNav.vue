@@ -5,7 +5,7 @@
                 <img class="h-full" src="@/assets/shared/desktop/image-category-thumbnail-headphones.png" alt="headphones">
             </div>
             <h3 class="text-black font-bold text-sm lg:text-md leading-xs lg:leading-sm tracking-xp lg:tracking-sp uppercase">headphones</h3>
-            <router-link to="/" class="flex">
+            <router-link :to="{name: 'category', params: {category: 'headphones'}}" class="flex">
                 <span class="uppercase text-black/50 group-hover:text-brown font-bold text-xs leading-xs tracking-xp mr-5">shop</span>
                 <img class="self-center" src="@/assets/shared/desktop/icon-arrow-right.svg" alt="right arrow">
             </router-link>
@@ -15,7 +15,7 @@
                 <img class="h-full" src="@/assets/shared/desktop/image-category-thumbnail-speakers.png" alt="speakers">
             </div>
             <h3 class="text-black font-bold text-sm lg:text-md leading-xs lg:leading-sm tracking-xp lg:tracking-sp uppercase">speakers</h3>
-            <router-link to="/" class="flex">
+            <router-link :to="{name: 'category', params: {category: 'speakers'}}" class="flex">
                 <span class="uppercase text-black/50 group-hover:text-brown font-bold text-xs leading-xs tracking-xp mr-5">shop</span>
                 <img class="self-center" src="@/assets/shared/desktop/icon-arrow-right.svg" alt="right arrow">
             </router-link>
@@ -25,7 +25,7 @@
                 <img class="h-full" src="@/assets/shared/desktop/image-category-thumbnail-earphones.png" alt="earphones">
             </div>
             <h3 class="text-black font-bold text-sm lg:text-md leading-xs lg:leading-sm tracking-xp lg:tracking-sp uppercase">earphones</h3>
-            <router-link to="/" class="flex">
+            <router-link :to="{name: 'category', params: {category: 'earphones'}}" class="flex">
                 <span class="uppercase text-black/50 group-hover:text-brown font-bold text-xs leading-xs tracking-xp mr-5">shop</span>
                 <img class="self-center" src="@/assets/shared/desktop/icon-arrow-right.svg" alt="right arrow">
             </router-link>
