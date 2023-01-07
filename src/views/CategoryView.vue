@@ -11,6 +11,7 @@
         <div class="px-2.4 md:px-0 pt-[6.4rem] pb-12f md:py-12f lg:py-16f flex flex-col gap-12f lg:gap-16f md:w-cm lg:w-ct mx-0 md:mx-auto">
             <ProductCard v-for="(product, index) in categoryProducts" :product="product" :index="index" />
             <CategoryNav />
+            <AppBanner />
         </div>
     </div>
 </template>
@@ -22,6 +23,7 @@ import jsonProducts from '@/data/products.json'
 import type { Product } from '@/models/product.model';
 import ProductCard from '@/components/ProductCard.vue';
 import CategoryNav from '@/components/CategoryNav.vue';
+import AppBanner from '@/components/AppBanner.vue';
 
 const props = defineProps<{category: string }>()
 const router = useRouter()
