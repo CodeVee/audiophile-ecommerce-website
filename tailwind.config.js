@@ -66,6 +66,8 @@ module.exports = {
         5.6: '5.6rem',
         6.4: '6.4rem',
         9.5: '9.5rem',
+        '12f': '12rem',
+        '16f': '16rem',
         ct: '111rem',
         cm: '68.9rem'
       }
