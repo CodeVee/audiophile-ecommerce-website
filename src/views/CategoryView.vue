@@ -36,7 +36,7 @@ const loadProducts = (category: string) => {
     }
 
     const products = jsonProducts as Product[];
-    categoryProducts = products.filter(product => product.category === category)
+    categoryProducts = products.filter(product => product.category === category).reverse()
 }
 
 loadProducts(props.category)
