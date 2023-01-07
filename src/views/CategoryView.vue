@@ -9,8 +9,7 @@
             </div>    
         </header>
         <div class="px-2.4 md:px-0 pt-[6.4rem] pb-12f md:py-12f lg:py-16f flex flex-col gap-12f lg:gap-16f md:w-cm lg:w-ct mx-0 md:mx-auto">
-            <ProductCard :switch-order="false" />
-            <ProductCard :switch-order="true" />
+            <ProductCard v-for="(product, index) in categoryProducts" :product="product" :index="index" />
         </div>
     </div>
 </template>
