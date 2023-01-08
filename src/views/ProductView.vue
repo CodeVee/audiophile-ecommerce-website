@@ -57,6 +57,8 @@
                 <SimilarProductCard v-for="similarProduct in product.others" :product="similarProduct"/>
             </div>
         </div>
+        <CategoryNav />
+        <AppBanner />
     </div>
 </template>
 
@@ -67,6 +69,8 @@ import { useScreen } from 'vue-screen'
 import { useRouter } from 'vue-router'
 import jsonProducts from '@/data/products.json'
 import SimilarProductCard from '@/components/SimilarProductCard.vue';
+import CategoryNav from '@/components/CategoryNav.vue';
+import AppBanner from '@/components/AppBanner.vue';
 
 let product: Product | undefined 
 const screen = useScreen()
