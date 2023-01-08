@@ -34,6 +34,23 @@
                 </div>
             </div>
         </div>
+        <div class="md:h-[36.8rem] lg:h-[59.2rem] grid md:grid-cols-[27.7rem_1fr] lg:grid-cols-[44.5rem_1fr] md:grid-rows-2 gap-y-8 lg:gap-y-3.2 gap-x-[1.8rem] lg:gap-x-12">
+            <figure>
+                <img class="rounded-0.8 hidden lg:inline" :src="product.gallery.first.desktop" alt="image 1">
+                <img class="rounded-0.8 hidden md:inline lg:hidden" :src="product.gallery.first.tablet" alt="image 1">
+                <img class="rounded-0.8 md:hidden" :src="product.gallery.first.mobile" alt="image 1">
+            </figure>
+            <figure class=" row-start-2">
+                <img class="rounded-0.8 hidden lg:inline" :src="product.gallery.second.desktop" alt="image 2">
+                <img class="rounded-0.8 hidden md:inline lg:hidden" :src="product.gallery.second.tablet" alt="image 2">
+                <img class="rounded-0.8 md:hidden" :src="product.gallery.second.mobile" alt="image 2">
+            </figure>
+            <figure>
+                <img class="rounded-0.8 hidden lg:inline" :src="product.gallery.third.desktop" alt="image 3">
+                <img class="rounded-0.8 hidden md:inline lg:hidden" :src="product.gallery.third.tablet" alt="image 3">
+                <img class="rounded-0.8 md:hidden" :src="product.gallery.third.mobile" alt="image 3">
+            </figure>
+        </div>
     </div>
 </template>
 
