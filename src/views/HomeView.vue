@@ -13,7 +13,7 @@ import CategoryNav from '@/components/CategoryNav.vue';
           <h1 class="font-bold uppercase text-[3.6rem] md:text-3xl leading-[4rem] md:leading-3xl tracking-sp md:tracking-px text-white">XX99 Mark II Headphones</h1>
           <h2 class="text-white font-medium text-sm leading-sm opacity-75 md:pr-[4.9rem]">Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</h2>
         </div>
-        <button class="btn btn-default btn-primary mx-auto lg:mx-0">see product</button>
+        <router-link :to="{name: 'product', params: { slug: 'xx99-mark-two-headphones'}}" class="btn btn-default btn-primary mx-auto lg:mx-0">see product</router-link>
       </div>
     </header>
     <div class="px-2.4 md:px-0 md:w-cm lg:w-ct mx-auto">
@@ -29,18 +29,18 @@ import CategoryNav from '@/components/CategoryNav.vue';
           <div class="w-[28rem] md:w-[34.9rem] lg:pt-[13.3rem] relative self-center lg:self-start text-center lg:text-left">
             <h4 class="px-6 md:px-0 uppercase text-white tracking-sp md:tracking-px leading-[4rem] md:leading-3xl text-[3.6rem] md:text-3xl font-bold mb-2.4">zx9 speaker</h4>
             <p class="text-white opacity-75 font-medium text-sm leading-sm mb-2.4 md:mb-16">Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-            <button class="btn btn-default btn-tetiary mx-auto lg:mx-0">see product</button>
+            <router-link :to="{name: 'product', params: { slug: 'zx9-speaker'}}"  class="btn btn-default btn-tetiary mx-auto lg:mx-0">see product</router-link>
           </div>
         </div>
         <div class="h-[32rem] rounded-0.8 bg-cover bg-[url('@/assets/home/mobile/image-speaker-zx7.jpg')] md:bg-[url('@/assets/home/tablet/image-speaker-zx7.jpg')] lg:bg-[url('@/assets/home/desktop/image-speaker-zx7.jpg')] flex flex-col gap-3.2 justify-center pl-2.4 md:pl-[6.2rem] lg:pl-9.5">
           <h4 class="font-bold text-black text-lgm leading-xl tracking-px uppercase">zx7 speaker</h4>
-          <button class="btn btn-default btn-secondary">see product</button>
+          <router-link :to="{name: 'product', params: { slug: 'zx7-speaker'}}"  class="btn btn-default btn-secondary">see product</router-link>
         </div>
         <div class="h-[42.4rem] md:h-[32rem] grid grid-rows-2 md:grid-rows-none md:grid-cols-2 gap-y-2.4 md:gap-y-0 md:gap-x-[1.1rem] lg:gap-x-12">
           <div class="bg-[url('@/assets/home/mobile/image-earphones-yx1.jpg')] md:bg-[url('@/assets/home/tablet/image-earphones-yx1.jpg')] bg-cover lg:bg-auto lg:bg-[url('@/assets/home/desktop/image-earphones-yx1.jpg')] rounded-0.8"></div>
           <div class="bg-grey rounded-0.8 flex flex-col gap-3.2 justify-center pl-2.4 md:pl-[4.1rem] lg:pl-9.5">
-            <h4 class="font-bold text-black text-lgm leading-xl tracking-px uppercase">yx1 speaker</h4>
-            <button class="btn btn-default btn-secondary">see product</button>
+            <h4 class="font-bold text-black text-lgm leading-xl tracking-px uppercase">yx1 earphones</h4>
+            <router-link :to="{name: 'product', params: { slug: 'yx1-earphones'}}" class="btn btn-default btn-secondary">see product</router-link>
           </div>
         </div>
       </div>
