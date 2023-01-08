@@ -6,12 +6,12 @@
                 <h3 v-show="product.new" class="uppercase text-brown font-normal text-xsm leading-xs tracking-pp mb-2.4 md:mb-1.6">new product</h3>
                 <h4 class="uppercase text-black font-bold text-lgm lg:text-2xl leading-xl md:leading-md lg:leading-2xl tracking-xp lg:tracking-mp mb-2.4 md:mb-3.2 md:px-2 lg:px-0">{{ product.name }}</h4>
                 <p class="text-black/50 font-medium text-sm leading-sm mb-2.4 md:mb-3.2">{{ product.description }}</p>
-                <span class="text-black font-bold text-md leading-sm tracking-sp inline-block mb-12 lg:mb-[4.7rem]">{{ product.price }}</span>
+                <span class="text-black font-bold text-md leading-sm tracking-sp inline-block mb-12 lg:mb-[4.7rem]">&#36; {{ formattedPrice }}</span>
                 <div class="flex gap-1.6">
                     <div class="w-48 h-4.8 flex justify-around items-center bg-grey">
-                        <button class="text-black/25 w-1.6 h-[1.8rem] hover:text-brown font-bold text-xs leading-xs">-</button>
+                        <button @click="reduceQuantity" class="text-black/25 w-1.6 h-[1.8rem] hover:text-brown font-bold text-xs leading-xs">-</button>
                         <span class="text-black font-bold text-xs leading-xs">{{ quantity }}</span>
-                        <button class="text-black/25 w-1.6 h-[1.8rem] hover:text-brown font-bold text-xs leading-xs">+</button>
+                        <button @click="increaseQuantity" class="text-black/25 w-1.6 h-[1.8rem] hover:text-brown font-bold text-xs leading-xs">+</button>
                     </div>
                     <button class="btn btn-primary btn-default mx-auto lg:mx-0">add to cart</button>
                 </div>
@@ -71,6 +71,7 @@ import jsonProducts from '@/data/products.json'
 import SimilarProductCard from '@/components/SimilarProductCard.vue';
 import CategoryNav from '@/components/CategoryNav.vue';
 import AppBanner from '@/components/AppBanner.vue';
+import { formatCurrency } from '@/helpers';
 
 let product: Product | undefined 
 const screen = useScreen()
@@ -98,6 +99,8 @@ const featureTexts = computed(() => {
     return product.features.split('\n\n')
 })
 
+const formattedPrice = computed(() => formatCurrency(product?.price || 0))
+
 const loadProduct = (slug: string) => {
     const products = jsonProducts as Product[];
     product = products.find(product => product.slug === slug)
@@ -108,6 +111,14 @@ const loadProduct = (slug: string) => {
     }
 }
 
+const reduceQuantity = () => {
+    if (quantity.value === 1) return
+    quantity.value--
+}
+const increaseQuantity = () => {
+    if (quantity.value === 10) return
+    quantity.value++
+}
 loadProduct(props.slug)
 
 watch(() => props.slug, currentSlug => loadProduct(currentSlug))
