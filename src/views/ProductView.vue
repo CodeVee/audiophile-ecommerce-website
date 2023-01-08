@@ -51,6 +51,12 @@
                 <img class="rounded-0.8 md:hidden" :src="product.gallery.third.mobile" alt="image 3">
             </figure>
         </div>
+        <div>
+            <h5 class="mb-16 md:mb-5.6 lg:mb-6.4 uppercase text-black font-bold text-lg md:text-xl leading-lg tracking-sl md:tracking-xpm text-center">you may also like</h5>
+            <div class="grid md:grid-cols-3 gap-y-5.6 md:gap-y-0 gap-x-4 lg:gap-x-12">
+                <SimilarProductCard v-for="similarProduct in product.others" :product="similarProduct"/>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -60,6 +66,7 @@ import { computed, ref, watch } from 'vue';
 import { useScreen } from 'vue-screen'
 import { useRouter } from 'vue-router'
 import jsonProducts from '@/data/products.json'
+import SimilarProductCard from '@/components/SimilarProductCard.vue';
 
 let product: Product | undefined 
 const screen = useScreen()

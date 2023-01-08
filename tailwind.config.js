@@ -42,16 +42,17 @@ module.exports = {
       '2xl': '4.4rem',
       '3xl': '5.8rem'
     },
+    letterSpacing: {
+      sl: '.086rem',
+      xp: '.1rem',
+      xpm: '.115rem',
+      sp: '.13rem',
+      mp: '.15rem',
+      lp: '.17rem',
+      px: '.2rem',
+      pp: '1rem'
+    },
     extend: {
-      letterSpacing: {
-        xp: '.1rem',
-        xpm: '.115rem',
-        sp: '.13rem',
-        mp: '.15rem',
-        lp: '.17rem',
-        px: '.2rem',
-        pp: '1rem'
-      },
       borderRadius: {
         0.8: '0.8rem'
       },

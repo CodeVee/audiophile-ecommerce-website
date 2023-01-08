@@ -31,7 +31,7 @@ interface Accessory {
     item: string;
 }
 
-interface SimilarProduct {
+export interface SimilarProduct {
     slug: string;
     name: string;
     image: ScreenImage;
