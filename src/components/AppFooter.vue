@@ -3,7 +3,9 @@
         <div class="px-2.4 md:px-0 md:w-cm lg:w-ct h-[65.4rem] md:h-[40rem] lg:h-[36.5rem] mx-auto">
             <div class="bg-brown h-[.4rem] w-[10.1rem] mx-auto md:mx-0"></div>
             <div class="mt-4.8 md:mt-5.6 lg:mt-[7.1rem] flex flex-col items-center md:items-start gap-4.8 md:gap-3.2 lg:gap-0 lg:flex-row lg:justify-between lg:items-center">
-                <img class="w-[14.3rem]" src="@/assets/shared/desktop/logo.svg" alt="logo">
+                <figure>
+                    <logo-icon></logo-icon>
+                </figure>
                 <div class="flex flex-col items-center md:items-start md:flex-row gap-1.6 md:gap-3.4">
                     <router-link :to="{name: 'home'}" class="text-white hover:text-brown uppercase text-xs font-bold leading-sm tracking-px">Home</router-link>
                     <router-link :to="{name: 'category', params: {category: 'headphones'}}" class="text-white hover:text-brown uppercase text-xs font-bold leading-sm tracking-px">Headphones</router-link>
@@ -51,5 +53,5 @@
 import FacebookIcon from '@/components/icons/IconFacebook.vue';
 import InstagramIcon from '@/components/icons/IconInstagram.vue';
 import TwitterIcon from '@/components/icons/IconTwitter.vue';
-
+import LogoIcon from '@/components/icons/IconLogo.vue';
 </script>
