@@ -25,12 +25,15 @@
 
 <script setup lang="ts">
 import type { Product } from '@/models/product.model';
-import { computed, ref } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { useScreen } from 'vue-screen'
+import { useRouter } from 'vue-router'
+import jsonProducts from '@/data/products.json'
 
 let product: Product | undefined 
 const screen = useScreen()
-
+const props = defineProps<{slug: string }>()
+const router = useRouter()
 
 const isMobile = computed(() => screen.width < 500)
 const isTablet = computed(() => screen.width < 1020)
@@ -48,7 +51,19 @@ const bgImage = computed(() => {
     return generateBgImage(desktop)
 })
 
+const loadProduct = (slug: string) => {
+    const products = jsonProducts as Product[];
+    product = products.find(product => product.slug === slug)
 
+    if (!product) {
+        router.push({name: 'home'})
+        return
+    }
+}
+
+loadProduct(props.slug)
+
+watch(() => props.slug, currentSlug => loadProduct(currentSlug))
 
 </script>
 
