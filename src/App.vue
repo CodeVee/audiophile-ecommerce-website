@@ -14,7 +14,9 @@ const hideCart = () => cartActive.value = false
 <template>
   <div class="bg-grey-light">
     <AppNavbar @show="showCart"/>
-    <RouterView />
+    <div class="pt-36 lg:pt-9.7">
+      <RouterView />
+    </div>
     <AppFooter />
     <Teleport to="body">
       <CartModal :show="cartActive" @close="hideCart" />

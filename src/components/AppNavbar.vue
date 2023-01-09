@@ -1,6 +1,6 @@
 <template>
-    <nav class="px-2.4 md:px-0" :class="bgCol">
-        <div class="md:w-cm lg:w-ct mx-auto flex items-center h-36 lg:h-[9.7rem]">
+    <nav class="px-2.4 md:px-0 fixed w-full z-10" :class="bgCol">
+        <div class="md:w-cm lg:w-ct mx-auto flex items-center h-36 lg:h-9.7">
             <button class="lg:hidden">
                 <hamburger-icon></hamburger-icon>
             </button>

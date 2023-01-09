@@ -1,6 +1,6 @@
 <template>
     <Transition name="modal">
-        <div @click="closeModal" v-if="show" class="h-[calc(100vh_-_9rem)] w-full bg-black/40 fixed top-36 pt-2.4 px-2.4 md:pr-16 lg:pt-3.2 lg:pr-[16.5rem]">
+        <div @click="closeModal" v-if="show" class="h-[calc(100vh_-_9rem)] lg:h-[calc(100vh_-_9.7rem)] w-full bg-black/40 fixed top-36 lg:top-9.7 pt-2.4 px-2.4 md:pr-16 lg:pt-3.2 lg:pr-[16.5rem]">
             <div @click.stop="" class="bg-white md:w-[37.7rem] rounded-0.8 px-[2.8rem] md:px-3.2 py-3.2 ml-auto">
                 <div class="flex flex-col gap-3.2 mb-2.4">
                     <div class="flex justify-between">
