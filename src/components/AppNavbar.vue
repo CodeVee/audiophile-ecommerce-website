@@ -13,7 +13,7 @@
                 <router-link :to="{name: 'category', params: {category: 'speakers'}}" class="text-white hover:text-brown uppercase text-xs font-bold leading-sm tracking-px">Speakers</router-link>
                 <router-link :to="{name: 'category', params: {category: 'earphones'}}" class="text-white hover:text-brown uppercase text-xs font-bold leading-sm tracking-px">Earphones</router-link>
             </div> 
-            <button>
+            <button @click="displayCart">
                 <cart-icon></cart-icon>
             </button>
         </div>
@@ -27,6 +27,7 @@ import HamburgerIcon from '@/components/icons/IconHamburger.vue';
 import CartIcon from '@/components/icons/IconCart.vue';
 import LogoIcon from '@/components/icons/IconLogo.vue';
 
+const emits = defineEmits<{ (e: 'show'): void}>()
 const route = useRoute()
     const bgCol = ref('bg-black-light')
     
@@ -40,4 +41,6 @@ const route = useRoute()
         }
       }
     )
+
+    const displayCart = () => emits('show')
 </script>

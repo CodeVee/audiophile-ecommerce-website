@@ -2,15 +2,34 @@
 import { RouterView } from 'vue-router'
 import AppNavbar from '@/components/AppNavbar.vue';
 import AppFooter from '@/components/AppFooter.vue';
+import CartModal from './components/CartModal.vue';
+import { ref } from 'vue';
+
+const cartActive = ref(false)
+
+const showCart = () => cartActive.value = true
+const hideCart = () => cartActive.value = false
 </script>
 
 <template>
   <div class="bg-grey-light">
-    <AppNavbar />
+    <AppNavbar @show="showCart"/>
     <RouterView />
     <AppFooter />
+    <Teleport to="body">
+      <CartModal :show="cartActive" @close="hideCart" />
+    </Teleport>
   </div>
 </template>
 
-<style scoped>
+<style>
+.modal-enter-active,
+.modal-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.modal-enter-from,
+.modal-leave-to {
+  opacity: 0;
+}
 </style>
