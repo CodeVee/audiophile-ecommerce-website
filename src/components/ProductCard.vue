@@ -7,7 +7,7 @@
             <h3 v-show="product.new" class="uppercase text-brown font-normal text-xsm leading-xs tracking-pp mb-2.4 md:mb-1.6">new product</h3>
             <h4 class="uppercase text-black font-bold text-lgm md:text-2xl leading-xl md:leading-2xl tracking-xp md:tracking-mp mb-2.4 md:mb-3.2 md:px-2 lg:px-0">{{ product.name }}</h4>
             <p class="text-black/50 font-medium text-sm leading-sm mb-2.4 md:mb-16">{{ product.description }}</p>
-            <button class="btn btn-primary btn-default mx-auto lg:mx-0">see product</button>
+            <router-link :to="{name: 'product', params: { slug: product.slug }}" class="btn btn-primary btn-default mx-auto lg:mx-0">see product</router-link>
         </div>
     </div>
 </template>
