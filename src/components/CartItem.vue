@@ -1,7 +1,7 @@
 <template>
     <div class="flex items-center">
         <figure class="h-6.4 w-6.4">
-            <img class="rounded-0.8" src="@/assets/cart/image-xx99-mark-two-headphones.jpg" alt="xx99">
+            <img class="rounded-0.8" src="/cart/image-xx99-mark-two-headphones.jpg" alt="xx99">
         </figure>
         <div class="flex flex-col justify-center ml-1.6 mr-auto">
             <span class="uppercase font-bold text-sm leading-sm text-black">xx99 mk ii</span>
