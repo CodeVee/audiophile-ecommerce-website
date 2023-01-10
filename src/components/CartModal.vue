@@ -37,18 +37,3 @@ const checkout = () => {
     closeModal()
 }
 </script>
-
-<style scoped lang="scss">
-
-.bar {
-    scrollbar-width: thin;
-    &::-webkit-scrollbar {
-        width: 3px;
-        background-color: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background-color: gray;
-    }
-}
-</style>

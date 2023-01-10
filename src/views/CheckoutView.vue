@@ -1,6 +1,6 @@
 <template>
     <div class="mt-6.4 mb-9.5 md:mt-9.5 md:mb-[11.4rem] lg:my-56 flex flex-col lg:flex-row gap-3.2 lg:gap-12 px-2.4 md:px-0 md:w-cm lg:w-ct mx-0 md:mx-auto">
-        <div class="flex-1 bg-white p-2.4 md:px-11 md:py-12 lg:px-4.8 lg:pb-4.8 lg:pt-[5.4rem] rounded-0.8">
+        <div class="lg:flex-1 bg-white p-2.4 md:px-11 md:py-12 lg:px-4.8 lg:pb-4.8 lg:pt-[5.4rem] rounded-0.8">
             <h2 class="font-bold text-black text-lgm md:text-xl leading-xl md:leading-lg tracking-xp md:tracking-xpm uppercase mb-3.2 md:mb-16">checkout</h2>
             <section class="mb-3.2 md:mb-[5.3rem] flex flex-col gap-1.6">
                 <h3 class="text-brown font-bold text-xs leading-sm tracking-xp uppercase">billing details</h3>
@@ -36,8 +36,30 @@
                 </div>
             </section>
         </div>
-        <div class="w-[35rem] py-3.2 px-2.4 md:px-3.2 flex flex-col gap-3.2 bg-white rounded-0.8 self-start">
+        <div class="lg:w-[35rem] py-3.2 px-2.4 md:px-3.2 flex flex-col gap-3.2 bg-white rounded-0.8 lg:self-start">
             <h4 class="uppercase text-black text-md leading-sm tracking-sp font-bold">summary</h4>
+            <div class="flex flex-col gap-2.4 max-h-[24rem] overflow-auto bar">
+                <CartItem checkout v-for="_ in arr"/>
+            </div>
+            <div>
+                <div class="flex justify-between items-center mb-0.8">
+                    <h5 class="self-center text-black/50 font-medium text-sm leading-sm uppercase">total</h5>
+                    <h5 class="font-bold text-md leading-sm text-black">$ 5,396</h5>
+                </div>
+                <div class="flex justify-between items-center mb-0.8">
+                    <h5 class="self-center text-black/50 font-medium text-sm leading-sm uppercase">shipping</h5>
+                    <h5 class="font-bold text-md leading-sm text-black">$ 50</h5>
+                </div>
+                <div class="flex justify-between items-center mb-2.4">
+                    <h5 class="self-center text-black/50 font-medium text-sm leading-sm uppercase">vat (included)</h5>
+                    <h5 class="font-bold text-md leading-sm text-black">$ 1,079</h5>
+                </div>
+                <div class="flex justify-between items-center">
+                    <h5 class="self-center text-black/50 font-medium text-sm leading-sm uppercase">grand total</h5>
+                    <h5 class="font-bold text-md leading-sm text-brown">$ 5,396</h5>
+                </div>
+            </div>
+            
             <button class="btn btn-primary btn-full">continue & pay</button>
         </div>
     </div>
@@ -47,8 +69,10 @@
 import Textbox from '@/components/AppTextbox.vue';
 import RadioButton from '@/components/AppRadioButton.vue';
 import CashOnDeliveryIcon from '@/components/icons/IconCashOnDelivery.vue';
+import CartItem from '@/components/CartItem.vue';
 import { ref } from 'vue';
 
 const eMoney = 'e-Money'
+const arr = [1, 2, 3]
 const selectedPayment = ref(eMoney)
 </script>

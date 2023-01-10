@@ -24,7 +24,7 @@ const hideCart = () => cartActive.value = false
   </div>
 </template>
 
-<style>
+<style lang="scss">
 .modal-enter-active,
 .modal-leave-active {
   transition: opacity 0.5s ease;
@@ -33,5 +33,17 @@ const hideCart = () => cartActive.value = false
 .modal-enter-from,
 .modal-leave-to {
   opacity: 0;
+}
+
+.bar {
+    scrollbar-width: thin;
+    &::-webkit-scrollbar {
+        width: 3px;
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: gray;
+    }
 }
 </style>
