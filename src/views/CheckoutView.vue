@@ -23,14 +23,14 @@
                 <h3 class="text-brown font-bold text-xs leading-sm tracking-xp uppercase mb-1.6">payment details</h3>
                 <div class="grid md:grid-cols-2 gap-y-2.4 md:gap-x-1.6">
                     <h5 class="font-bold text-black text-[1.2rem] leading-[1.6rem] -tracking-[.21px] capitalize">payment method</h5>
-                    <Textbox label-text="" placeholder="e-Money"/>
-                    <Textbox label-text="" placeholder="Cash on Delivery" class="md:col-start-2"/> 
+                    <RadioButton label-text="e-Money" v-model="selectedPayment" name="payment method"/>
+                    <RadioButton label-text="Cash on Delivery" v-model="selectedPayment" name="payment method" class="md:col-start-2"/>
                 </div>
-                <div class="grid md:grid-cols-2 gap-y-2.4 md:gap-x-1.6 mt-3.2 md:mt-2.4">
+                <div v-show="selectedPayment === eMoney" class="grid md:grid-cols-2 gap-y-2.4 md:gap-x-1.6 mt-3.2 md:mt-2.4">
                     <Textbox label-text="e-Money Number" placeholder="238521993"/>
                     <Textbox label-text="e-Money PIN" placeholder="6891"/>  
                 </div>
-                <div class="flex flex-col md:flex-row gap-2.4 md:gap-12 2 mt-3.2 md:mt-12">
+                <div v-show="!(selectedPayment === eMoney)" class="flex flex-col md:flex-row gap-2.4 md:gap-12 2 mt-3.2 md:mt-12">
                     <figure class="w-4.8 h-4.8 self-center">
                         <img src="@/assets/checkout/icon-cash-on-delivery.svg" alt="cash">
                     </figure>
@@ -47,4 +47,9 @@
 
 <script setup lang="ts">
 import Textbox from '@/components/AppTextbox.vue';
+import RadioButton from '@/components/AppRadioButton.vue';
+import { ref } from 'vue';
+
+const eMoney = 'e-Money'
+const selectedPayment = ref(eMoney)
 </script>
