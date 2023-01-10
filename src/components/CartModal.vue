@@ -8,14 +8,14 @@
                         <button class="self-center text-black/50 hover:text-brown font-medium text-sm leading-sm underline capitalize">remove all</button>
                     </div>
                     <div class="flex flex-col gap-2.4 max-h-[24rem] overflow-auto bar">
-                        <CartItem v-for="num in [1, 2, 3, 4]"/>
+                        <CartItem v-for="num in arr"/>
                     </div>
                     <div class="flex justify-between items-center">
                         <h5 class="font-bold text-md leading-sm tracking-sp text-black uppercase">$ 5,396</h5>
                         <h5 class="self-center text-black/50 font-medium text-sm leading-sm uppercase order-first">total</h5>
                     </div>
                 </div>
-                <button class="btn btn-primary btn-full">checkout</button>
+                <button @click="checkout" class="btn btn-primary btn-full">checkout</button>
             </div>
         </div>
     </Transition>
@@ -24,11 +24,18 @@
 
 <script setup lang="ts">
 import CartItem from './CartItem.vue';
+import { useRouter } from 'vue-router'
 
+const arr = [1, 2, 3]
 const props = defineProps<{ show: boolean}>()
+const router = useRouter()
 const emits = defineEmits<{(e: 'close'): void }>()
 
 const closeModal = () => emits('close')
+const checkout = () => {
+    router.push({name: 'checkout'})
+    closeModal()
+}
 </script>
 
 <style scoped lang="scss">
