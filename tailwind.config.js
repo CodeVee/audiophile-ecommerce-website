@@ -8,12 +8,14 @@ module.exports = {
       'white': '#FFFFFF',
       'brown': {
         DEFAULT: '#D87D4A',
-        light: '#FBAF85'
+        light: '#FBAF85',
+        deep: '#CD2C2C'
       },
       'grey': {
         DEFAULT: '#F1F1F1',
         light: '#FAFAFA',
-        mid: '#4C4C4C'
+        mid: '#4C4C4C',
+        deep: '#CFCFCF'
       },
       'black': {
         DEFAULT: '#000000',
