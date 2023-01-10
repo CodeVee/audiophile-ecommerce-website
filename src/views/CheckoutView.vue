@@ -31,9 +31,7 @@
                     <Textbox label-text="e-Money PIN" placeholder="6891"/>  
                 </div>
                 <div v-show="!(selectedPayment === eMoney)" class="flex flex-col md:flex-row gap-2.4 md:gap-12 2 mt-3.2 md:mt-12">
-                    <figure class="w-4.8 h-4.8 self-center">
-                        <img src="@/assets/checkout/icon-cash-on-delivery.svg" alt="cash">
-                    </figure>
+                    <cash-on-delivery-icon class="self-center"></cash-on-delivery-icon>
                     <p class="flex-1 font-medium text-sm leading-sm text-black/50 text-center md:text-left">The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.</p>
                 </div>
             </section>
@@ -48,6 +46,7 @@
 <script setup lang="ts">
 import Textbox from '@/components/AppTextbox.vue';
 import RadioButton from '@/components/AppRadioButton.vue';
+import CashOnDeliveryIcon from '@/components/icons/IconCashOnDelivery.vue';
 import { ref } from 'vue';
 
 const eMoney = 'e-Money'
