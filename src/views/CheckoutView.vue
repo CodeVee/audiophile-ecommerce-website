@@ -60,9 +60,12 @@
                 </div>
             </div>
             
-            <button class="btn btn-primary btn-full">continue & pay</button>
+            <button @click="showModal" class="btn btn-primary btn-full">continue & pay</button>
         </div>
     </div>
+    <Teleport to="body">
+      <OrderConfirmModal :show="orderCompleted" @close="returnToHomepage" />
+    </Teleport>
 </template>
 
 <script setup lang="ts">
@@ -70,9 +73,20 @@ import Textbox from '@/components/AppTextbox.vue';
 import RadioButton from '@/components/AppRadioButton.vue';
 import CashOnDeliveryIcon from '@/components/icons/IconCashOnDelivery.vue';
 import CartItem from '@/components/CartItem.vue';
+import OrderConfirmModal from '@/components/OrderConfirmModal.vue';
+import { useRouter } from 'vue-router'
 import { ref } from 'vue';
 
 const eMoney = 'e-Money'
 const arr = [1, 2, 3]
 const selectedPayment = ref(eMoney)
+const orderCompleted = ref(false)
+const router = useRouter()
+
+const showModal = () => orderCompleted.value = true
+
+const returnToHomepage = () => {
+    orderCompleted.value = false
+    router.push({name: 'home'})
+}
 </script>

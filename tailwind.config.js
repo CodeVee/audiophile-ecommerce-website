@@ -24,6 +24,7 @@ module.exports = {
       }
     },
     fontSize: {
+      xss: '1.2rem',
       xs: '1.3rem',
       xsm: '1.4rem',
       sm: '1.5rem',
@@ -35,6 +36,7 @@ module.exports = {
       '3xl': '5.6rem',
     },
     lineHeight: {
+      xss: '1.64rem',
       xs: '1.9rem',
       xsm: '2.4rem',
       sm: '2.5rem',
@@ -45,6 +47,7 @@ module.exports = {
       '3xl': '5.8rem'
     },
     letterSpacing: {
+      el: '.021rem',
       sl: '.086rem',
       xp: '.1rem',
       xpm: '.115rem',
@@ -60,6 +63,7 @@ module.exports = {
       },
       boxShadow: {},
       spacing: {
+        0.8: '0.8rem',
         1.6: '1.6rem',
         2.4: '2.4rem',
         3.2: '3.2rem',

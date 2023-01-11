@@ -2,7 +2,7 @@
 import { RouterView } from 'vue-router'
 import AppNavbar from '@/components/AppNavbar.vue';
 import AppFooter from '@/components/AppFooter.vue';
-import CartModal from './components/CartModal.vue';
+import CartModal from '@/components/CartModal.vue';
 import { ref } from 'vue';
 
 const cartActive = ref(false)
