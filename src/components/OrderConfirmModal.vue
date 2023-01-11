@@ -2,9 +2,7 @@
     <modal-mask v-show="show" @click="closeModal" :styles="['pt-3.2', 'px-2.4', 'md:pt-4.8', 'lg:pt-1.6']">
         <Transition name="modal">
             <div v-show="show" @click.stop="" class="bg-white md:w-[54rem] rounded-0.8 p-3.2 md:p-4.8 md:mx-auto">
-                <figure class="w-6.4 h-6.4 mb-2.4 md:mb-3.2">
-                    <img src="@/assets/checkout/icon-order-confirmation.svg" alt="confirm">
-                </figure>
+                <order-confirmation-icon class="mb-2.4 md:mb-3.2"></order-confirmation-icon>
                 <h3 class="font-bold uppercase text-lg md:text-xl leading-[2.8rem] md:leading-lg tracking-sl md:tracking-sp text-black mb-1.6 md:mb-2.4">thank you <br> for your order</h3>
                 <p class="text-black/50 font-medium text-sm leading-sm mb-2.4 md:mb-3.2">You will receive an email confirmation shortly.</p>
                 <div class="mb-2.4 md:mb-4.8 md:w-[44.4rem] md:h-56 bg-grey rounded-0.8 flex flex-col md:flex-row">
@@ -35,6 +33,7 @@
 
 <script setup lang="ts">
 import ModalMask from './AppModalMask.vue';
+import OrderConfirmationIcon from '@/components/icons/IconOrderConfirmation.vue';
 
 defineProps<{ show: boolean}>()
 const emits = defineEmits<{(e: 'close'): void }>()
