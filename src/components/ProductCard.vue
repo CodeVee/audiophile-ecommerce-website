@@ -26,7 +26,7 @@ const isTablet = computed(() => screen.width < 1020)
 
 const generateBgImage = (imageUrl: string) => `url('${imageUrl}')`
 const bgImage = computed(() => {
-    const { mobile, tablet, desktop } = props.product.image
+    const { mobile, tablet, desktop } = props.product.categoryImage
 
     if (isMobile.value) return generateBgImage(mobile)
     if (isTablet.value) return generateBgImage(tablet)
