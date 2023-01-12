@@ -15,7 +15,8 @@
     "vee-validate": "^4.7.3",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6",
-    "vue-screen": "^2.1.0-beta.1"
+    "vue-screen": "^2.1.0-beta.1",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",
