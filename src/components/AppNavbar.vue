@@ -1,7 +1,7 @@
 <template>
     <nav class="px-2.4 md:px-0 fixed w-full z-10" :class="bgCol">
         <div class="md:w-cm lg:w-ct mx-auto flex items-center h-36 lg:h-9.7">
-            <button class="lg:hidden">
+            <button @click="toggleMenu" class="lg:hidden">
                 <hamburger-icon></hamburger-icon>
             </button>
             <router-link :to="{name: 'home'}" class="ml-[7.6rem] mr-[6.9rem] md:ml-[4.2rem] md:mr-auto lg:ml-0 lg:mr-0">
@@ -18,6 +18,9 @@
             </button>
         </div>
     </nav>
+    <Teleport to="body">
+      <mobile-menu :show="activeMenu" @close="hideMenu"></mobile-menu>
+    </Teleport>
 </template>
 
 <script setup lang="ts">
@@ -26,21 +29,26 @@ import { ref, watch } from 'vue'
 import HamburgerIcon from '@/components/icons/IconHamburger.vue';
 import CartIcon from '@/components/icons/IconCart.vue';
 import LogoIcon from '@/components/icons/IconLogo.vue';
+import MobileMenu from '@/components/AppMobileMenu.vue';
 
+const activeMenu = ref(false)
 const emits = defineEmits<{ (e: 'show'): void}>()
 const route = useRoute()
-    const bgCol = ref('bg-black-light')
-    
-    watch(
-      () => route.name,
-       routeName => {
-        if (routeName === 'home') {
-            bgCol.value = 'bg-black-light'
-        } else {
-            bgCol.value = 'bg-black'
-        }
-      }
-    )
+const bgCol = ref('bg-black-light')
 
-    const displayCart = () => emits('show')
+watch(
+    () => route.name,
+    routeName => {
+    if (routeName === 'home') {
+        bgCol.value = 'bg-black-light'
+    } else {
+        bgCol.value = 'bg-black'
+    }
+    }
+)
+
+const displayCart = () => emits('show')
+
+const toggleMenu = () => activeMenu.value = !activeMenu.value
+const hideMenu = () => activeMenu.value = false
 </script>
