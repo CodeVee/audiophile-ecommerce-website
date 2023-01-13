@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import CategoryView from '@/views/CategoryView.vue';
 import ProductView from '@/views/ProductView.vue';
 import CheckoutView from '@/views/CheckoutView.vue';
+import { useProductStore } from '@/stores';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -27,7 +28,13 @@ const router = createRouter({
     {
       path: '/checkout',
       name: 'checkout',
-      component: CheckoutView
+      component: CheckoutView,
+      beforeEnter: (to, from, next) => {
+        const productStore = useProductStore()
+        const cart = productStore.cart
+        if (cart.length === 0) next({name: 'home'})
+        else next()
+      }
     }
   ]
 })
