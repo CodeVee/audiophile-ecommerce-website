@@ -1,4 +1,4 @@
-import type { ScreenImage } from '@/models/product.model'
+import type { ScreenImage } from '@/models'
 import { useAppStore } from '@/stores';
 
 export const formatCurrency = (value: number) => Intl.NumberFormat('en-US').format(value)

@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import type { SimilarProduct } from '@/models/product.model';
+import type { SimilarProduct } from '@/models'
 
 
 

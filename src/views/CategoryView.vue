@@ -20,7 +20,7 @@
 import { watch } from 'vue';
 import { useRouter } from 'vue-router'
 import jsonProducts from '@/data/products.json'
-import type { Product } from '@/models/product.model';
+import type { Product } from '@/models'
 import ProductCard from '@/components/ProductCard.vue';
 import CategoryNav from '@/components/CategoryNav.vue';
 import AppBanner from '@/components/AppBanner.vue';

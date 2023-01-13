@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Product } from '@/models/product.model';
+import type { Product } from '@/models'
 import { computed } from 'vue';
 import { generateScreenBgImage  } from '@/helpers';
 
