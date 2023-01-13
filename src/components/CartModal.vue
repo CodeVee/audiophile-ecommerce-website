@@ -49,6 +49,7 @@ const cartTotal = computed(() => {
 
 const closeModal = () => emits('close')
 const checkout = () => {
+    if (cart.value.length === 0) return
     router.push({name: 'checkout'})
     closeModal()
 }

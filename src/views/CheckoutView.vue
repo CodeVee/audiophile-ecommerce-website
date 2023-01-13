@@ -64,7 +64,7 @@
         </div>
     </Form>
     <Teleport to="body">
-      <OrderConfirmModal :show="orderCompleted" @close="returnToHomepage" />
+      <OrderConfirmModal :show="orderCompleted" :cart="cart" :grand-total="grandTotalFormatted" @close="returnToHomepage" />
     </Teleport>
 </template>
 
@@ -86,8 +86,6 @@ const emptyLabel = ' '
 const baseSchema = yup.object({
     name: yup.string().required().label(emptyLabel),
     email: yup.string().required().email().label(emptyLabel),
-    phone: yup.string().required().label(emptyLabel),
-    address: yup.string().required().label(emptyLabel),
 });
 
 const eMoney = 'e-Money'
@@ -97,6 +95,7 @@ const router = useRouter()
 const productStore = useProductStore()
 
 const { cart } = storeToRefs(productStore)
+const { clearCart } = productStore
 
 const cartTotal = computed(() => {
     const sum = cart.value.reduce((agg, item) => {
@@ -120,8 +119,6 @@ const schema = computed(() => {
         return yup.object({
             name: yup.string().required().label(emptyLabel),
             email: yup.string().required().email().label(emptyLabel),
-            phone: yup.string().required().label(emptyLabel),
-            address: yup.string().required().label(emptyLabel),
             eMoneyNumber: yup.string().required().label(emptyLabel),
             eMoneyPin: yup.string().required().label(emptyLabel),
         });
@@ -134,6 +131,7 @@ const showModal = () => orderCompleted.value = true
 
 const returnToHomepage = () => {
     orderCompleted.value = false
+    clearCart()
     router.push({name: 'home'})
 }
 
