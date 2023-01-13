@@ -14,16 +14,10 @@ export const useProductStore = defineStore("app", {
     },
 
     findProductBySlug(slug: string) {
-        if (!this.products.length) {
-            this.loadProducts();
-        }
         return this.products.find(product => product.slug === slug)
     },
 
     getProductsByCategory(category: string) {
-        if (!this.products.length) {
-            this.loadProducts();
-        }
         return this.products.filter(product => product.category === category).reverse()
     }
   },

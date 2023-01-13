@@ -4,11 +4,16 @@ import AppNavbar from '@/components/AppNavbar.vue';
 import AppFooter from '@/components/AppFooter.vue';
 import CartModal from '@/components/CartModal.vue';
 import { ref } from 'vue';
+import { useProductStore } from '@/stores';
 
+const productStore = useProductStore()
 const cartActive = ref(false)
 
 const showCart = () => cartActive.value = true
 const hideCart = () => cartActive.value = false
+const loadProducts = () => productStore.loadProducts()
+
+loadProducts()
 </script>
 
 <template>
