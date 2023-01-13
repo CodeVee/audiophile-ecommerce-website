@@ -16,6 +16,9 @@ export interface Product {
       third: ScreenImage;
     };
     others: SimilarProduct[];
+    cartImage: string;
+    formattedPrice: string;
+    formattedDescription: string[];
 }
 
 type Category = 'earphones' | 'headphones' | 'speakers'
@@ -35,4 +38,13 @@ export interface SimilarProduct {
     slug: string;
     name: string;
     image: ScreenImage;
+}
+
+export interface CartProduct {
+    productId: number;
+    quantity: number;
+    price: number;
+    productName: string;
+    imageUrl: string;
+    formattedPrice: string;
 }
