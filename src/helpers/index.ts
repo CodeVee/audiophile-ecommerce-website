@@ -5,8 +5,9 @@ export const formatCurrency = (value: number) => Intl.NumberFormat('en-US').form
 
 export const generateScreenBgImage = (imageForms: ScreenImage) => {
     const appStore = useAppStore()
+    const { isMobileScreen, isTabletScreen } = appStore
     const { mobile, tablet, desktop } = imageForms
-    const correctFormat = appStore.isMobileScreen ? mobile : appStore.isTabletScreen ? tablet : desktop
+    const correctFormat = isMobileScreen ? mobile : isTabletScreen ? tablet : desktop
     const bgImageUrl = `url('${correctFormat}')`
     return bgImageUrl
 }

@@ -1,8 +1,8 @@
 
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia';
 import { useScreen } from 'vue-screen'
 
-export const useAppStore = defineStore("app", {
+export const useAppStore = defineStore('app', {
   getters: {
     isMobileScreen() {
       const screen = useScreen()

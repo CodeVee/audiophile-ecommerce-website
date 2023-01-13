@@ -17,8 +17,8 @@ import type { Product } from '@/models'
 import { computed } from 'vue';
 import { generateScreenBgImage  } from '@/helpers';
 
-
 const props = defineProps<{ product: Product, index: number }>()
+
 const bgImage = computed(() => generateScreenBgImage(props.product.categoryImage))
 const productClass = computed(() => {
     const evenItem = props.index % 2 === 1

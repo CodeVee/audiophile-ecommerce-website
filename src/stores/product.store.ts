@@ -1,9 +1,9 @@
-import type { Product, CartProduct } from "@/models";
-import { defineStore } from "pinia";
-import jsonProducts from "@/data/products.json";
+import type { Product, CartProduct } from '@/models';
+import { defineStore } from 'pinia';
+import jsonProducts from '@/data/products.json';
 import { formatCurrency } from '@/helpers';
 
-export const useProductStore = defineStore("app", {
+export const useProductStore = defineStore('product', {
   state: () => ({
     products: [] as Product[],
     selectedProduct: null as Product | null,

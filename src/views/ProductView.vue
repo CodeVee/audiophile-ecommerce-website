@@ -70,12 +70,16 @@ import SimilarProductCard from '@/components/SimilarProductCard.vue';
 import CategoryNav from '@/components/CategoryNav.vue';
 import AppBanner from '@/components/AppBanner.vue';
 import { generateScreenBgImage } from '@/helpers';
-import { useProductStore } from '@/stores';
+import { useProductStore, useAppStore } from '@/stores';
+import { storeToRefs } from 'pinia';
 
 
 const props = defineProps<{slug: string }>()
 const router = useRouter()
 const productStore = useProductStore()
+const appStore = useAppStore()
+
+const { isMobileScreen } = storeToRefs(appStore)
 const { addProductToCart, findProductBySlug } = productStore
 
 const product = ref<Product | undefined>()
@@ -110,9 +114,8 @@ const addToCart = () => {
 loadProduct(props.slug)
 
 watch(() => props.slug, currentSlug => loadProduct(currentSlug))
-
+watch(isMobileScreen, () => {
+    if (!product.value) return
+    bgImage.value = generateScreenBgImage(product.value.image)
+})
 </script>
-
-<style scoped>
-
-</style>
