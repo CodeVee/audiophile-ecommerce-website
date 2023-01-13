@@ -66,15 +66,16 @@
 import type { Product } from '@/models'
 import { computed, ref, watch } from 'vue';
 import { useRouter } from 'vue-router'
-import jsonProducts from '@/data/products.json'
 import SimilarProductCard from '@/components/SimilarProductCard.vue';
 import CategoryNav from '@/components/CategoryNav.vue';
 import AppBanner from '@/components/AppBanner.vue';
 import { formatCurrency, generateScreenBgImage } from '@/helpers';
+import { useProductStore } from '@/stores';
 
 let product: Product | undefined 
 const props = defineProps<{slug: string }>()
 const router = useRouter()
+const productStore = useProductStore()
 
 const quantity = ref(1)
 
@@ -91,8 +92,7 @@ const featureTexts = computed(() => {
 const formattedPrice = computed(() => formatCurrency(product?.price || 0))
 
 const loadProduct = (slug: string) => {
-    const products = jsonProducts as Product[];
-    product = products.find(product => product.slug === slug)
+    product = productStore.findProductBySlug(slug)
 
     if (!product) {
         router.push({name: 'home'})

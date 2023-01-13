@@ -19,14 +19,15 @@
 <script setup lang="ts">
 import { watch } from 'vue';
 import { useRouter } from 'vue-router'
-import jsonProducts from '@/data/products.json'
 import type { Product } from '@/models'
 import ProductCard from '@/components/ProductCard.vue';
 import CategoryNav from '@/components/CategoryNav.vue';
 import AppBanner from '@/components/AppBanner.vue';
+import { useProductStore } from '@/stores';
 
 const props = defineProps<{category: string }>()
 const router = useRouter()
+const productStore = useProductStore()
 let categoryProducts: Product[] = []
 
 
@@ -39,8 +40,7 @@ const loadProducts = (category: string) => {
         return
     }
 
-    const products = jsonProducts as Product[];
-    categoryProducts = products.filter(product => product.category === category).reverse()
+    categoryProducts = productStore.getProductsByCategory(category)
 }
 
 loadProducts(props.category)
