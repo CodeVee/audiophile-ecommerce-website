@@ -107,8 +107,8 @@ const increaseQuantity = () => {
 }
 
 const addToCart = () => {
-    const productId = product.value?.id || 0
-    addProductToCart(productId, quantity.value)
+    if (quantity.value === 0 || !product.value) return
+    addProductToCart(product.value.id, quantity.value)
     quantity.value = 0
 }
 loadProduct(props.slug)
