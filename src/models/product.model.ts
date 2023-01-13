@@ -20,7 +20,7 @@ export interface Product {
 
 type Category = 'earphones' | 'headphones' | 'speakers'
 
-interface ScreenImage {
+export interface ScreenImage {
     mobile: string;
     tablet: string;
     desktop: string;

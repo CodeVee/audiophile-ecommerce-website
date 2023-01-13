@@ -70,25 +70,17 @@ import jsonProducts from '@/data/products.json'
 import SimilarProductCard from '@/components/SimilarProductCard.vue';
 import CategoryNav from '@/components/CategoryNav.vue';
 import AppBanner from '@/components/AppBanner.vue';
-import { formatCurrency } from '@/helpers';
-import { useAppStore } from '@/stores';
+import { formatCurrency, generateScreenBgImage } from '@/helpers';
 
 let product: Product | undefined 
 const props = defineProps<{slug: string }>()
 const router = useRouter()
-const appStore = useAppStore()
 
 const quantity = ref(1)
 
-const generateBgImage = (imageUrl: string) => `url('${imageUrl}')`
 const bgImage = computed(() => {
     if (!product) return ''
-
-    const { mobile, tablet, desktop } = product.image
-
-    if (appStore.isMobileScreen) return generateBgImage(mobile)
-    if (appStore.isTabletScreen) return generateBgImage(tablet)
-    return generateBgImage(desktop)
+    return generateScreenBgImage(product.image)
 })
 
 const featureTexts = computed(() => {

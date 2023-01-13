@@ -15,20 +15,11 @@
 <script setup lang="ts">
 import type { Product } from '@/models/product.model';
 import { computed } from 'vue';
-import { useAppStore } from '@/stores';
+import { generateScreenBgImage  } from '@/helpers';
 
 
 const props = defineProps<{ product: Product, index: number }>()
-const appStore = useAppStore()
-
-const generateBgImage = (imageUrl: string) => `url('${imageUrl}')`
-const bgImage = computed(() => {
-    const { mobile, tablet, desktop } = props.product.categoryImage
-
-    if (appStore.isMobileScreen) return generateBgImage(mobile)
-    if (appStore.isTabletScreen) return generateBgImage(tablet)
-    return generateBgImage(desktop)
-})
+const bgImage = computed(() => generateScreenBgImage(props.product.categoryImage))
 const productClass = computed(() => {
     const evenItem = props.index % 2 === 1
     return { 'lg:order-last': evenItem}
