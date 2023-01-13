@@ -65,21 +65,18 @@
 <script setup lang="ts">
 import type { Product } from '@/models/product.model';
 import { computed, ref, watch } from 'vue';
-import { useScreen } from 'vue-screen'
 import { useRouter } from 'vue-router'
 import jsonProducts from '@/data/products.json'
 import SimilarProductCard from '@/components/SimilarProductCard.vue';
 import CategoryNav from '@/components/CategoryNav.vue';
 import AppBanner from '@/components/AppBanner.vue';
 import { formatCurrency } from '@/helpers';
+import { useAppStore } from '@/stores';
 
 let product: Product | undefined 
-const screen = useScreen()
 const props = defineProps<{slug: string }>()
 const router = useRouter()
-
-const isMobile = computed(() => screen.width < 500)
-const isTablet = computed(() => screen.width < 1020)
+const appStore = useAppStore()
 
 const quantity = ref(1)
 
@@ -89,8 +86,8 @@ const bgImage = computed(() => {
 
     const { mobile, tablet, desktop } = product.image
 
-    if (isMobile.value) return generateBgImage(mobile)
-    if (isTablet.value) return generateBgImage(tablet)
+    if (appStore.isMobileScreen) return generateBgImage(mobile)
+    if (appStore.isTabletScreen) return generateBgImage(tablet)
     return generateBgImage(desktop)
 })
 

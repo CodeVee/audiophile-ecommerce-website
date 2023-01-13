@@ -15,21 +15,18 @@
 <script setup lang="ts">
 import type { Product } from '@/models/product.model';
 import { computed } from 'vue';
-import { useScreen } from 'vue-screen'
+import { useAppStore } from '@/stores';
 
 
 const props = defineProps<{ product: Product, index: number }>()
-const screen = useScreen()
-
-const isMobile = computed(() => screen.width < 500)
-const isTablet = computed(() => screen.width < 1020)
+const appStore = useAppStore()
 
 const generateBgImage = (imageUrl: string) => `url('${imageUrl}')`
 const bgImage = computed(() => {
     const { mobile, tablet, desktop } = props.product.categoryImage
 
-    if (isMobile.value) return generateBgImage(mobile)
-    if (isTablet.value) return generateBgImage(tablet)
+    if (appStore.isMobileScreen) return generateBgImage(mobile)
+    if (appStore.isTabletScreen) return generateBgImage(tablet)
     return generateBgImage(desktop)
 })
 const productClass = computed(() => {
