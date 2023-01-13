@@ -39,24 +39,24 @@
         <div class="lg:w-[35rem] py-3.2 px-2.4 md:px-3.2 flex flex-col gap-3.2 bg-white rounded-0.8 lg:self-start">
             <h4 class="uppercase text-black text-md leading-sm tracking-sp font-bold">summary</h4>
             <div class="flex flex-col gap-2.4 max-h-[24rem] overflow-auto bar">
-                <CartItem checkout v-for="_ in arr"/>
+                <CartItem checkout v-for="item in cart" :item="item"/>
             </div>
             <div>
                 <div class="flex justify-between items-center mb-0.8">
                     <h5 class="self-center text-black/50 font-medium text-sm leading-sm uppercase">total</h5>
-                    <h5 class="font-bold text-md leading-sm text-black">$ 5,396</h5>
+                    <h5 class="font-bold text-md leading-sm text-black">$ {{ totalCostFormatted }}</h5>
                 </div>
                 <div class="flex justify-between items-center mb-0.8">
                     <h5 class="self-center text-black/50 font-medium text-sm leading-sm uppercase">shipping</h5>
-                    <h5 class="font-bold text-md leading-sm text-black">$ 50</h5>
+                    <h5 class="font-bold text-md leading-sm text-black">$ {{ shippingCostFormatted }}</h5>
                 </div>
                 <div class="flex justify-between items-center mb-2.4">
                     <h5 class="self-center text-black/50 font-medium text-sm leading-sm uppercase">vat (included)</h5>
-                    <h5 class="font-bold text-md leading-sm text-black">$ 1,079</h5>
+                    <h5 class="font-bold text-md leading-sm text-black">$ {{ vatFormatted }}</h5>
                 </div>
                 <div class="flex justify-between items-center">
                     <h5 class="self-center text-black/50 font-medium text-sm leading-sm uppercase">grand total</h5>
-                    <h5 class="font-bold text-md leading-sm text-brown">$ 5,396</h5>
+                    <h5 class="font-bold text-md leading-sm text-brown">$ {{ grandTotalFormatted }}</h5>
                 </div>
             </div>
             
@@ -78,6 +78,9 @@ import { useRouter } from 'vue-router'
 import { ref, computed } from 'vue';
 import { Form } from 'vee-validate';
 import * as yup from 'yup';
+import { useProductStore } from '@/stores';
+import { storeToRefs } from 'pinia';
+import { formatCurrency } from '@/helpers';
 
 const emptyLabel = ' '
 const baseSchema = yup.object({
@@ -85,16 +88,32 @@ const baseSchema = yup.object({
     email: yup.string().required().email().label(emptyLabel),
     phone: yup.string().required().label(emptyLabel),
     address: yup.string().required().label(emptyLabel),
-    city: yup.string().required().label(emptyLabel),
-    zipCode: yup.string().required().label(emptyLabel),
-    country: yup.string().required().label(emptyLabel),
 });
 
 const eMoney = 'e-Money'
-const arr = [1, 2, 3]
 const selectedPayment = ref(eMoney)
 const orderCompleted = ref(false)
 const router = useRouter()
+const productStore = useProductStore()
+
+const { cart } = storeToRefs(productStore)
+
+const cartTotal = computed(() => {
+    const sum = cart.value.reduce((agg, item) => {
+        const value = item.price * item.quantity
+        agg += value
+        return agg
+    }, 0)
+    return sum
+})
+const totalCostFormatted = computed(() => formatCurrency(cartTotal.value))
+
+const shippingCost = computed(() => cart.value.length * 10)
+const shippingCostFormatted = computed(() => formatCurrency(shippingCost.value))
+
+const vatFormatted = computed(() => formatCurrency(cartTotal.value / 5))
+
+const grandTotalFormatted = computed(() => formatCurrency(cartTotal.value + shippingCost.value))
 
 const schema = computed(() => {
     if (selectedPayment.value === eMoney) {
@@ -103,9 +122,6 @@ const schema = computed(() => {
             email: yup.string().required().email().label(emptyLabel),
             phone: yup.string().required().label(emptyLabel),
             address: yup.string().required().label(emptyLabel),
-            city: yup.string().required().label(emptyLabel),
-            zipCode: yup.string().required().label(emptyLabel),
-            country: yup.string().required().label(emptyLabel),
             eMoneyNumber: yup.string().required().label(emptyLabel),
             eMoneyPin: yup.string().required().label(emptyLabel),
         });
