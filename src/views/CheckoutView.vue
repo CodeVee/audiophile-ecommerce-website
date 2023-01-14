@@ -94,24 +94,12 @@ const orderCompleted = ref(false)
 const router = useRouter()
 const productStore = useProductStore()
 
-const { cart } = storeToRefs(productStore)
+const { cart, shippingCost, vatPercentage, cartTotal } = storeToRefs(productStore)
 const { clearCart } = productStore
 
-const cartTotal = computed(() => {
-    const sum = cart.value.reduce((agg, item) => {
-        const value = item.price * item.quantity
-        agg += value
-        return agg
-    }, 0)
-    return sum
-})
 const totalCostFormatted = computed(() => formatCurrency(cartTotal.value))
-
-const shippingCost = computed(() => cart.value.length * 10)
 const shippingCostFormatted = computed(() => formatCurrency(shippingCost.value))
-
-const vatFormatted = computed(() => formatCurrency(cartTotal.value / 5))
-
+const vatFormatted = computed(() => formatCurrency(cartTotal.value * vatPercentage.value))
 const grandTotalFormatted = computed(() => formatCurrency(cartTotal.value + shippingCost.value))
 
 const schema = computed(() => {

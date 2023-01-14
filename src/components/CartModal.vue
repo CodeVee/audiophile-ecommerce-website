@@ -12,7 +12,7 @@
                         @increase="increaseItem(item.productId)" @reduce="reduceItem(item.productId)"/>
                     </div>
                     <div class="flex justify-between items-center">
-                        <h5 class="font-bold text-md leading-sm tracking-sp text-black uppercase">$ {{ cartTotal }}</h5>
+                        <h5 class="font-bold text-md leading-sm tracking-sp text-black uppercase">$ {{ cartTotalFormatted }}</h5>
                         <h5 class="self-center text-black/50 font-medium text-sm leading-sm uppercase order-first">total</h5>
                     </div>
                 </div>
@@ -33,19 +33,12 @@ import { storeToRefs } from 'pinia'
 
 defineProps<{ show: boolean}>()
 const productStore = useProductStore()
-const { cart } = storeToRefs(productStore)
+const { cart, cartTotal } = storeToRefs(productStore)
 const { clearCart, increaseCartItemQuantity, reduceCartItemQuantity } = productStore
 const router = useRouter()
 const emits = defineEmits<{(e: 'close'): void }>()
 
-const cartTotal = computed(() => {
-    const sum = cart.value.reduce((agg, item) => {
-        const value = item.price * item.quantity
-        agg += value
-        return agg
-    }, 0)
-    return formatCurrency(sum)
-})
+const cartTotalFormatted = computed(() => formatCurrency(cartTotal.value))
 
 const closeModal = () => emits('close')
 const checkout = () => {

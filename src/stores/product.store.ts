@@ -8,7 +8,19 @@ export const useProductStore = defineStore('product', {
     products: [] as Product[],
     selectedProduct: null as Product | null,
     cart: [] as CartProduct[],
+    shippingCost: 50,
+    vatPercentage: 0.2
   }),
+  getters: {
+    cartTotal(state) {
+      const sum = state.cart.reduce((agg, item) => {
+          const value = item.price * item.quantity
+          agg += value
+          return agg
+      }, 0)
+      return sum
+    }
+  },
   actions: {
     loadProducts() {
       const initialProducts = jsonProducts as Product[];
